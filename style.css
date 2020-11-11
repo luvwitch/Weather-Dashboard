@@ -1,9 +1,77 @@
-body
+body {
+   background-color: rgb(241, 239, 239);
+   
+}
 
-jumbotron
+.jumbotron {
+    background-color: black;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+}
 
-location card
+#locationsearch {   
+    background-color:rgb(218, 213, 213);
+    width: 30%;
+    height: 100%;
+    margin: 0%;
+    margin-top: 0%;
+    padding: 1%;
+    float:left;
+}
 
-daily weather 
+#card1 {      
+    margin: 5%;
+    align-items: left;
+    padding: 30px;   
+}
 
-five day future weather cards
+#city-input {
+    width: 70%;
+    margin: 10%;
+    margin-right:0%;
+}
+
+#searchBtn {
+    background-color: rgb(158, 211, 193);
+    border-color: azure;
+
+}
+
+
+#rightside{
+    width: 70% auto;
+    margin-top: 0%;    
+    float: right;  
+}
+
+
+#main { 
+    margin-top: 1%;
+    margin-right: 0%;
+    padding: 70px;
+    border: 1px solid black;    
+    font-size: 20px;  
+    width: auto;
+    height: auto;
+         
+}
+
+#fiveday { 
+    width: auto;  
+    padding: 40px;
+    height:40%;  
+   
+}
+
+#day1,
+#day2,
+#day3,
+#day4,
+#day5 {
+    width: 100% auto;
+    height: 100% auto;
+    background-color: rgb(145, 149, 185);
+    border: 1px solid black;
+    font-size: 20px;  
+}

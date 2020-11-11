@@ -23,24 +23,124 @@
 <body>
 
 <!--JUMBOTRON-->
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Fluid jumbotron</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
-  </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Weather Dashboard</h1>      
+        </div>
+     </div>
 
 <!--LEFT SIDE CARD W LOCATION BUTTONS AND SEARCH-->
+     
+ <div class="container" id="locationsearch">
+    <div class="card" id="card1">         
+         <h2>Search for a City:</h2>
+        
+         <div class="input mb-3">
+            <input type="text" id="city-input">            
+            <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>      
+         <button data-city="austin">Austin, Texas</button>
+         <button data-city="chicago">Chicago</button>
+         <button data-city="newyork">New York</button>
+         <button data-city="orlando">Orlando</button>
+         <button data-city="sanfran">San Francisco</button>
+         <button data-city="seattle">Seattle</button>
+         <button data-city="denver">Denver</button>
+         <button data-city="atlanta">Atlanta</button>
+     </div>
+  </div>
 
 <!--RIGHT SIDE TOP CARD TODAYS WEATHER (CITY TEMP HUMIDITY WINDSPEED UV INDEX-->
+ <div class="container" id="rightside">    
+  <div class="container" id="main">
+         <h1 class="citytoday"><span="cityname"> city </span><span="todaydate"> date </span><i class="fas fa-cloud"></i></h1>
+         <br>
+         <br>
+         <div class="temp">temp</div>
+         <br>
+         <div class="humidity">humidity</div>
+         <br>
+         <div class="windspeed">windspeed</div>
+         <br>
+         <div class="uv">uv</div>     
+  </div> 
 
 <!--right side bottom row with h1 lable & 5 containers for 5 day future weather forecast (date, temp, humidity) -->
-
     
+  <div class= "container" id="fiveday">
+    <h1>5-Day Forecast:</h1>
+        <br>
+    <div class="row"> 
+        
+        <div class="col-md">
+           <div class="container" id="day1">
+                <p>date</p>
+                <p>icon</p>
+                <p>temp</p>
+                <p>humidity</p>
+           </div>    
+        </div>
+
+        <div class="col-md">
+            <div class="container" id="day2">
+                <p>date</p>
+                <p>icon</p>
+                <p>temp</p>
+                <p>humidity</p>
+           </div>  
+        </div>
+
+        <div class="col-md">
+            <div class="container" id="day3">
+                <p>date</p>
+                <p>icon</p>
+                <p>temp</p>
+                <p>humidity</p>
+            </div>  
+        </div>
+
+        <div class="col-md">
+            <div class="container" id="day4">
+                <p>date</p>
+                <p>icon</p>
+                <p>temp</p>
+                <p>humidity</p>
+            </div>  
+
+        </div>
+
+        <div class="col-md">
+            <div class="container" id="day5">
+                <p>date</p>
+                <p>icon</p>
+                <p>temp</p>
+                <p>humidity</p>
+            </div>  
+        </div>
+
+    </div>    
+  </div>
+</div> 
 
 <!--SCRIPT LINKS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
+<script type="text/javascript">
+
+function searchCityWeather(city) {
+
+    $("button").on("click", function() {   
+        
+    $.ajax({
+      queryURL ="api.openweathermap.org/data/2.5/forecast?q="+cityname+"&appid=d0191890d63071c1377d53f280afcf63"
+      method: "GET"
+    })
+    .then(function(response) {
+       console.log(queryURL);
+       console.log(response);
+    }
+   });
+
 </body>
 </html>
